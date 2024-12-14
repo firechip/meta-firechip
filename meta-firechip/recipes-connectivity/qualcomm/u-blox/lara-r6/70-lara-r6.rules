@@ -1,0 +1,3 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="11a8", MODE="0660", GROUP="dialout", SYMLINK+="ttyUSB_LARA_R6_AT"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="11a8", ENV{ID_MM_DEVICE_IGNORE}="1" #Avoid modem manager to control this device
+SUBSYSTEM=="tty", KERNEL=="ttyUSB*", ATTRS{product}=="LARA-R6", MODE="0660", GROUP="dialout"

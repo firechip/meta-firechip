@@ -1,0 +1,16 @@
+[Unit]
+Description=QMI Daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/qmi-daemon
+Restart=on-failure
+User=root
+Group=dialout
+# If you're using RPATH in your plugin's CMakeLists.txt, this is NOT needed:
+# Environment="LD_LIBRARY_PATH=/usr/lib/qmi-daemon/plugins:$LD_LIBRARY_PATH"
+
+[Install]
+WantedBy=multi-user.target
